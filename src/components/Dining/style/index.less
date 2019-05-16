@@ -1,0 +1,104 @@
+.dining-wrapper {
+    position: absolute;
+    .dining-header { 
+        margin-left: 27px;
+        margin-top: 25px;
+        .dining-header-title {
+            float: left;
+            font-size: 30px;
+            color:rgba(255,255,255,1);
+            font-weight: bold;             
+        }
+        .dining-header-btn {
+            float: left;
+            margin-left: 20px; 
+            width: 150px;
+            height: 40px;
+            background: rgba(19,211,224,0);
+            border: 1px solid rgba(19, 211, 224, 1);
+            border-radius: 4px;
+            font-size: 18px;
+            color: rgba(19,211,224,1);
+            text-align: center;
+            line-height: 40px;
+        }
+    }
+    .breakfast-today {
+        position: absolute;
+        width: 1689px;
+        height: 300px;
+        background: rgba(9,25,63,0.5);
+        border: 2px solid rgba(11, 136, 233, 1); 
+        margin-top: 20px;    
+        margin-left: 27px;
+        .breakfast-content { 
+            margin-top: 23px;
+            .meal-wrapper {
+                margin-left: 30px;
+                .meal-title {
+                    font-size: 24px;
+                    color: rgba(255,255,255,1);
+                    margin-bottom: 54px;
+                }
+                .meal-list {
+                    margin-left: 23px;
+                    width: 550px;
+                    .meal-item { 
+                        width: 100px;
+                        // display: flex;
+                        // flex-direction: column;
+                        // justify-content: space-between;
+                        // align-items: center; 
+                        .meal-item-pic {
+                            width: 100px;
+                            height: 100px;
+                            border: 2px solid rgba(89, 148, 255, 1);
+                            background-repeat: no-repeat;
+                            background-size: 100% 100%;
+                            margin-bottom: 25px;      
+                        } 
+                        .meal-item-intro {
+                            width: 100px;
+                            text-align: center;
+                            white-space: pre-wrap;
+                            font-size: 18px; 
+                            color: rgba(153,153,153,1); 
+                        }
+                    }
+                }
+            }
+            .breakfast-content-left {
+                float: left;
+                margin-right: 260px;
+            }  
+            .breakfast-content-right {
+                float: left;   
+            }   
+        }       
+    } 
+    .week-recipe {
+        position: absolute;
+        width: 1689px;
+        height: 648px;
+        left: 27px;
+        top: 409px;
+        background: rgba(9,25,63,0.5);
+        border: 2px solid rgba(11, 136, 233, 1); 
+        .recipe-content {
+            .recipe-title {
+                margin-top: 18px;
+                margin-left: 25px;
+                margin-bottom: 18px;
+                font-size: 24px;
+                color: rgba(255,255,255,1); 
+                font-weight:400;
+            }    
+        }
+    }   
+}
+
+.form-scroll {
+    height: 590px;   
+    overflow-y: scroll;
+    scroll-behavior: smooth;                    
+} 

@@ -1,0 +1,103 @@
+html, body, div, span, object, iframe,h1, h2, 
+h3, h4, h5, h6, p, blockquote, pre,abbr, address, cite, code,del, dfn, 
+em, img, ins,kbd, q, samp,small, strong, sub, sup, var,b, i,dl, dt, dd, 
+ol, ul, li,fieldset, form, label, legend,table, caption, tbody, 
+tfoot,thead,tr, th, td,article, aside, canvas, details, figcaption, 
+figure, footer, header, hgroup, menu, nav, section, summary,time, mark, 
+audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+    outline-style:none;/*FF*/ 
+}
+body {
+    line-height: 1;
+    width: 100%;
+    height: 100%;
+    color: #999;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    text-decoration:none; 
+    color:#999; 
+}
+a:hover,
+a:focus {
+    text-decoration: none;
+    outline-style: none;
+}
+ol, ul {
+	list-style: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+input,
+select {
+    vertical-align: middle;
+}
+i {
+    font-style: normal;
+}
+.clearfix::before,
+.clearfix::after {
+    content: "";
+    height: 0;
+    line-height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+    /*IE/7/6*/
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    color: #999;
+}
+#ROOT {
+    position: relative;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    background:rgba(4, 13, 35, 1);
+}
+.left-side {
+    flex-basis: 180px;
+    height: 100%;
+    background:rgba(4, 13, 35, 0.7);
+    border-radius:5px;
+    font-size:25px;
+    font-weight:400; 
+    // color:rgba(19,211,224,1);
+}
+
+.right-side {
+    flex: 1;
+    height: 100%;
+    background:rgba(1, 4, 11, 0.9);
+}

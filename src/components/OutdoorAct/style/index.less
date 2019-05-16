@@ -1,0 +1,397 @@
+.outdoor-wrapper {
+    position: absolute;
+    width: 90%;
+    height: 100%;
+    .outdoor-title {
+        margin-left: 27px;
+        margin-top: 25px;
+        margin-bottom: 28px;
+        font-size: 30px;
+        font-weight: bold;
+        color: rgba(255,255,255,1);
+    }
+    .outdoor-content-wrapper {
+        position: relative;
+        margin-left: 27px;
+        width: 1688px;
+        height: 972px;
+        background: rgba(9,25,63,0.5);
+        border: 2px solid rgba(11, 136, 233, 1);
+        .outdoor-info-tab-page {
+            height: 100%;
+        } 
+        .sport-model-content {
+            margin-top: 265px;
+            margin-left: 200px;
+            margin-right: 230px;
+            display: flex;
+            justify-content: space-between;
+            .sport-model-wrapper {
+                width: 218px; 
+                .sport-model-type {
+                    margin: 0 32px 48px;
+                    width: 150px;
+                    height: 150px;
+                    background: rgba(19,211,224,0.2);
+                    border: 2px solid rgba(19, 211, 224, 1);
+                    border-radius: 50%; 
+                    line-height: 150px;
+                    text-align: center;
+                    font-size: 24px;
+                    font-weight: bold;
+                    color: rgba(19,211,224,1);
+                }
+                .sport-model-intro { 
+                    font-size: 18px;
+                    font-weight: 400;
+                    color: rgba(153,153,153,1);
+                    line-height: 30px;
+                }
+            }
+        }
+        .statistic-content {
+            margin-top: 220px;
+            margin-left: 254px;
+            .heat-statistic {
+                float: left;
+                .heat-statistic-title {
+                    font-size: 24px;
+                    font-weight: 400;
+                    color: rgba(255,255,255,1);
+                    margin-bottom: 30px;
+                }
+                .heat-statistic-map {
+                    width: 425px;
+                    height: 262px;
+                    background-image: url('../img/heat_map.png'); 
+                    background-repeat: no-repeat;
+                    background-size: 100% 100%;
+                    margin-bottom: 20px;
+                } 
+                .heat-map-intro {
+                    span:nth-child(1) { 
+                        float: left;
+                        font-size: 15px;
+                        font-weight: 400;
+                        color: rgba(255,255,255,1);
+                        margin-left: 10px;
+                        margin-right: 10px;
+                        line-height: 20px;
+                    }
+                    span:nth-child(2) {
+                        float: left;
+                        width: 262px;
+                        height: 20px;
+                        background: linear-gradient(90deg,rgba(255,19,0,1),rgba(255,136,0,1),rgba(253,255,0,1),rgba(0,247,0,1));
+                        border-radius: 10px;
+                        margin-right: 10px;  
+                    }
+                    span:nth-child(3) {
+                        float: left;
+                        font-size: 15px;
+                        font-weight: 400;
+                        color: rgba(255,255,255,1);
+                        line-height: 20px;
+                    } 
+                }
+            } 
+            .number-statistic {
+                float: left;
+                margin-left: 250px;
+                .number-statistic-title {
+                    margin-left: 22px;
+                    font-size: 24px;
+                    font-weight: 400;
+                    color: rgba(255,255,255,1);
+                    margin-bottom: 30px;
+                }
+                .echart-wrapper {
+                    width: 500px;
+                    height: 330px;
+                }
+            }   
+        }
+        .property-mark-content {
+            margin-top: 65px;
+            margin-left: 43px;
+            .property-mark-wrapper {
+                .mark-item {
+                    float: left;
+                    width: 370px;
+                    height: 328px;
+                    margin-right: 40px;
+                    margin-bottom: 70px; 
+                    .mark-item-img {
+                        width: 370px;
+                        height: 250px;
+                        background-image: url('../img/artist.png');
+                        background-repeat: no-repeat;
+                        background-size: 100% 100%;
+                    }
+                    .mark-item-img-add {
+                        width: 370px;
+                        height: 250px; 
+                        background-color: #161C2B;
+                        background-image: url('../img/add.png');
+                        background-repeat: no-repeat;
+                        background-size: 55px 55px; 
+                        background-position: center center; 
+                    }
+                    .mark-item-intro {
+                        margin-top: 15px;
+                        display: flex;
+                        justify-content: space-between;
+                        .mark-item-name {
+                            font-size: 22px;
+                            font-weight: 400;
+                            color: rgba(255,255,255,1);
+                        }
+                        .mark-item-edit {
+                            width: 25px;
+                            height: 25px;
+                            background-image: url('../img/edit.png');
+                            background-repeat: no-repeat;
+                            background-size: 100% 100%;                            
+                        }
+                    }
+                    .mark-item-tags { 
+                        margin-top: 16px;
+                        .mark-item-tag {
+                            float: left;
+                            width: 50px;
+                            height: 21px;
+                            background: rgba(0,255,255,0);
+                            border: 1px solid rgba(19, 211, 224, 1);
+                            border-radius: 4px;
+                            font-size: 15px;
+                            font-weight: 400;
+                            color: rgba(19,211,224,1);
+                            line-height: 21px;
+                            text-align: center;
+                            margin-right: 10px;
+                            margin-bottom: 10px; 
+                        }
+
+                    }
+                }                    
+            }
+        }  
+    }
+    .edit-mark { 
+        width: 100%;
+        height: 100%;
+        background: #060B17;
+        .edit-mark-content {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 350px;
+            background: rgba(9,25,63,1);
+            border: 1px solid rgba(89, 148, 255, 1);
+            border-radius: 4px;
+            z-index: 100;
+            .edit-mark-title {
+                margin-top: 36px;
+                text-align: center;
+                font-size: 22px;
+                font-weight: 400;
+                color: rgba(255,255,255,1);
+            }
+            .edit-mark-property {
+                margin-top: 45px;
+                margin-left: 94px;
+                .edit-mark-property-title {
+                    float: left;
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: rgba(153,153,153,1);
+                    margin-left: 16px;
+                }
+                .edit-mark-property-items {
+                    float: left;
+                    width: 330px;
+                    .edit-mark-property-item {
+                        float: left;
+                        margin-right: 10px;
+                        margin-bottom: 15px;
+                        font-size: 12px;
+                        font-weight: 400;
+                        text-align: center;
+                        line-height: 25px;
+                        width: 70px;
+                        height: 25px; 
+                        background:rgba(19,211,224,0);
+                        color:rgba(153,153,153,1);
+                        border: 1px solid rgba(153, 153, 153, 0.5);
+                        border-radius: 3px;
+                    }
+                    .edit-mark-property-item.active {
+                        color: rgba(9,25,63,1);
+                        background:rgba(19,211,224,1);
+                    }
+                } 
+            }
+            .edit-btn {
+                margin-top: 30px;
+                margin-left: 146px;
+                .edit-btn-cancel, .edit-btn-yes {
+                    float: left;
+                    width:130px;
+                    height:45px;
+                    background:rgba(89,148,255,0);
+                    border:1px solid rgba(89, 148, 255, 1);
+                    border-radius:4px; 
+                    text-align: center;
+                    line-height: 45px;
+                    font-size:18px;
+                    font-weight: 400;
+                    color: rgba(89,148,255,1);                   
+                }
+                .edit-btn-cancel {
+                    margin-right: 49px;
+                }
+            }
+        }
+    }
+    
+    .assessment{
+        padding: 0 40px;
+        .assessment-title{
+            height:21px;
+            font-size:20px;
+            font-weight:400;
+            color:rgba(153,153,153,1);
+        }
+        .assessment-boxs{
+            margin-top: 20px;
+            width: 100%;
+            height: 848px;
+            display: flex;
+            flex-wrap:wrap;
+            justify-content: space-between;
+            align-content: space-between;
+            .assessment-box{
+                height: 417px;
+                width: 530px;
+                border:2px solid rgba(11, 136, 233, .5);
+                box-sizing: border-box;
+                padding: 26px 27px;
+                .assessment-box-title{
+                    height:24px;
+                    font-size:24px;
+                    font-weight:400;
+                    color:rgba(255,255,255,1);
+                }
+                .assessment-box-sub{
+                    margin-top: 26px;
+                    height:20px;
+                    font-size:20px;
+                    font-weight:400;
+                    color:rgba(153,153,153,1);
+                }
+                .charts-area{
+                    position: relative;
+                    margin-top: 53px;
+                    width: 100%;
+                    height: 280px;
+
+                    .echarts-for-react {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .table-area{
+                    position: relative;
+                    margin-top: 40px;
+                }
+                .charts-area2{
+                    position: relative;
+                    margin-top: 97px;
+                    width: 100%;
+                    height: 180px;
+                }
+                .charts-area-likes{
+                    display: flex;
+                    justify-content: space-between;
+                    .a-likes-charts{
+                        width: 80px;
+                        p{
+                            height:15px;
+                            font-size:15px;
+                            font-weight:400;
+                            color:rgba(19,211,224,1);
+                            margin-bottom: 32px;
+                            text-align: center;
+                        }
+                    }
+                }
+                .statisic-table{
+                    width: 100%;
+                    border: 0;
+                    tr{
+                        border-bottom: 1px solid rgba(255,255,255,.2);
+                        &:last-of-type{
+                            border-bottom: 0;
+                        }
+                    }
+                    th{
+                        height: 40px;
+                        line-height: 40px;
+                        font-size: 15px;
+                        text-align: center;
+                        color: #fff;
+                        background:rgba(9,25,63,1);
+                        border-right: 1px solid rgba(255,255,255,.2);
+                        &:last-of-type{
+                            border-right: 0;
+                        }
+                    }
+                    tbody{
+                        td{
+                            height: 40px;
+                            line-height: 40px;
+                            font-size: 15px;
+                            text-align: center;
+                            color:rgba(153,153,153,1);
+                            background:rgba(9,25,63,.4);
+                            border-right: 1px solid rgba(255,255,255,.2);
+                            &:last-of-type{
+                                border-right: 0;
+                            }
+                        }
+                    }
+                }
+                .btn-add-charts{
+                    display: block;
+                    margin: 100px auto 0 auto;
+                    width: 90px;
+                    height: 90px;
+                }
+            }
+        }
+    }
+}
+.tb-mt{
+    margin-top: 40px;
+}
+.tb-mark, .tb-statistics, .tb-sport, .tb-detail {
+    width: 100%;
+    height: 910px; 
+} 
+
+.outdoor-form-content {
+    height: 860px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+        width: 2px; 
+    } 
+    &::-webkit-scrollbar-thumb {
+        background: #5994FF; 
+    }
+    &::-webkit-scrollbar-track {
+        background-color: #eee;
+    }    
+}    

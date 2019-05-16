@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>健康校园</title> 
+    <script>    
+        /*设置REM方案*/
+        var iScale, lenWindow, iWidth;
+        function initRem() {
+            iScale = 1;
+            iScale = iScale / window.devicePixelRatio;
+            lenWindow = document.documentElement.clientWidth;
+            iWidth = lenWindow / 12;
+            document.getElementsByTagName('html')[0].style.fontSize = iWidth + 'px';
+        }
+        initRem();
+        window.addEventListener("resize", function () {
+            initRem();
+        });
+    </script>
+    <script>
+        window.ontouchcancel=null;
+        window.ontouchend=null;
+        window.ontouchmove=null;
+        window.ontouchstart=null;
+    </script>
+</head> 
+<body>
+    <div id="ROOT"></div>
+</body>
+</html>  

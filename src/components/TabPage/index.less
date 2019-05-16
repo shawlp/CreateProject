@@ -1,0 +1,65 @@
+.tab-page{
+    position: relative;
+    width: 100%;
+    nav{
+        position: relative;
+        height: 60px;
+        line-height: 60px;
+        padding: 0 20px;
+        z-index: 11;
+        .nav-item{
+            position: relative;
+            float: left;
+            min-width: 60px;
+            text-align: center;
+            padding: 0 20px;
+            font-size:20px;
+            font-weight:400;
+            color:rgba(153,153,153,1);
+            &.active{
+                color:rgba(255,255,255,1);
+                &::after{
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    margin-left: -25px;
+                    width: 50px;
+                    height: 3px;
+                    background: #fff;
+                }
+            }
+        }
+        &::after{
+            contain: '';
+            display: block;
+            clear: both;
+        }
+    }
+    .tab-page-content-out{
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-top: 70px;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+    }
+    .tab-page-content{
+        position: relative;
+        // margin-top: 10px;
+        width: 100%;
+        height: 100%;
+        .tab-page-content-scroll{
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+        }
+        
+        .tab-page-content-scroll::-webkit-scrollbar{
+            width: 0px;
+            height: 0px;
+        }
+    }
+}
