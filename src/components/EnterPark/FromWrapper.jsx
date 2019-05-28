@@ -5,7 +5,7 @@ import Form from '../../common/Form/index.jsx';
 import TabBar from '../../common/TabBar/index.jsx';
 import { observer, inject } from 'mobx-react';
 import Swiper from 'swiper';
-import '@/static/swiper.css';
+// import '@/static/swiper.css';
 
 let swiperTimer = null;
 

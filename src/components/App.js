@@ -2,45 +2,23 @@ import React, { Component, Fragment } from 'react';
 import { observer, inject } from 'mobx-react';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import Loadable from 'react-loadable';
-import Home from '../common/Home';
-import LoginModule , { loginStore } from 'exhibition-login'; // 登录组件
-import createWebSocket from 'exhibition-wsserver';
-import CantractForLinkage from '@/common/Cantract/CantractForLinkage';//登录组件
-import Contract from '@/common/Contract'; 
-import {Tool,Het} from 'exhibition-tool';
+import { Layout, Menu, Breadcrumb, Icon } from 'antd';
+import 'antd/dist/antd.css';
+import Sidebar from '@/components/SiderBar';
+import BreadCrumb from '@/components/BreadCrumb';
+import barMenu from '@/config/sideBarMenu';
+
+const { Header, Content, Footer, Sider } = Layout;
+const SubMenu = Menu.SubMenu;
 
 const Loading = () => <div>Loading...</div>;
-// 代码分割, 以路由为分割异步加载各个模块
-const EnterPark = Loadable({ 
-    loader: () => import('./EnterPark/index.jsx'),
+const tom = Loadable({ 
+    loader: () => import('@/components/tom'),
     loading: Loading,
 });
-const LearnAct = Loadable({
-    loader: () => import('./LearnAct/index.jsx'),
-    loading: Loading,
-});
-const Dining = Loadable({
-    loader: () => import('./Dining/index.jsx'),
-    loading: Loading,
-});
-const DiningMenuRecom = Loadable({
-    loader: () => import('./Dining/DiningMenuRecom/index.jsx'),
-    loading: Loading,
-});
-const DiningMenuTips = Loadable({
-    loader: () => import('./Dining/DiningMenuTips/index'),
-    loading: Loading,
-});
-const Nap = Loadable({
-    loader: () => import('./Nap/index.jsx'),
-    loading: Loading,
-});
-const OutdoorAct = Loadable({
-    loader: () => import('./OutdoorAct/index.jsx'),
-    loading: Loading,
-});
-const LeavePark = Loadable({
-    loader: () => import('./LeavePark/index.jsx'),
+
+const bill = Loadable({ 
+    loader: () => import('@/components/bill'),
     loading: Loading,
 });
 
@@ -54,46 +32,74 @@ class noMatch extends Component {
     }
 }
 
-const appId = Tool.getUrlParam('appId');
-const appSecret = Tool.getUrlParam('appSecret');
 @observer 
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            loginPass: false
-        }
-        this.lisenWebSocket(props);
+            collapsed: false,
+            breadCrumbItem: []
+        };
     }
-    lisenWebSocket(){
-        const ws = createWebSocket('/v1/web/smarthome/websocketServer',{sceneName:Contract.SCENE_NAME_CAMPUS_B});
-        ws.registMessage((data)=>{
-            console.log(data);
-            if(data.dataType==15){
-                let routeData = JSON.parse(data.data);
-                if(routeData.action===CantractForLinkage.ACTION_ROUTE_CHANGE){
-                    window.location.href=`#${routeData.value}` 
-                }
-            }
+    onCollapse = collapsed => {
+        console.log(collapsed);
+        this.setState({
+            collapsed: !this.state.collapsed
         });
     }
+    componentDidMount() {
+        this.getBreadCrumbItem();
+    }
+    getBreadCrumbItem() {
+        window.onhashchange = () => {
+            let hash = window.location.hash.substr(2);
+            let breadItem = [];
+            let hashItem = hash.split('/');
+            barMenu.forEach((item) => {
+                if (item.flag == hashItem[0]) {
+                    item.children.forEach((ite) => {
+                        if (ite.url == window.location.hash.substr(1)) {
+                            breadItem = ite.breadItem;
+                            this.setState({
+                                breadCrumbItem: breadItem
+                            }); 
+                        }
+                    })
+                }
+            });
+        }
+    }
     render () {
-        let { loginStore, testStore } = this.props;
+        let {breadCrumbItem} = this.state;
         return (  
             <Router>
                 <Fragment>
-                    <LoginModule appId={appId?appId:31165} appSecret={appSecret?appSecret:'131a55f337584c2e854b8dd7673ad323'}></LoginModule>
-
-                    <div className="left-side"> 
-                        <Home />
-                    </div>
-                    <div className="right-side">
-                        <Switch>    
-                            <Route exact path='/'  component={EnterPark}/>
-                            <Route exact path='/EnterPark'  component={EnterPark}/>
-                            <Route exact component={noMatch} /> 
-                        </Switch> 
-                    </div>
+                    <Layout style={{ minHeight: '100vh' }}>
+                        <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
+                            <div className="logo" />
+                            <Sidebar allMenu={barMenu} location={window.location}/>
+                        </Sider>
+                        <Layout>
+                            <Header style={{ background: '#fff', padding: 0 }}>
+                                <Icon
+                                    className="trigger"
+                                    type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
+                                    onClick={this.onCollapse}
+                                />        
+                            </Header> 
+                            <Content style={{ margin: '0 16px' }}>
+                                <BreadCrumb items={breadCrumbItem}/>
+                                <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
+                                    <Switch>    
+                                        <Route exact path='/user/tom'  component={tom}/>
+                                        <Route exact path='/user/bill'  component={bill}/>
+                                        <Route exact component={noMatch} /> 
+                                    </Switch> 
+                                </div>
+                            </Content>
+                            <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+                        </Layout>
+                    </Layout>
                 </Fragment>
             </Router>   
         ) 
